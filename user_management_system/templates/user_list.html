@@ -1,0 +1,34 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in userList %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ url_for('editUser', id=user.id) }}" id="editUserButton">Edit</a>
+                    <a href="{{ url_for('deleteUser', id=user.id) }}" id="deleteUserButton">Delete</a>
+                    <a href="{{ url_for('viewUser', id=user.id) }}" id="viewUserButton">View</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('addUser') }}" id="addUserButton">Add User</a>
+</body>
+</html>
+```

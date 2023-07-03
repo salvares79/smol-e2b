@@ -1,0 +1,16 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+</head>
+<body>
+    <h1>Add User</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ AddUserForm.as_p }}
+        <button type="submit" id="addUserButton">Add User</button>
+    </form>
+</body>
+</html>
+```
